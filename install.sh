@@ -158,7 +158,7 @@ if [ ! -d $SDKPATH ]; then
   cloneSDK && success
   installSDK && success
 else
-  info "Toolchain-SDK already installed\nInstallation cancelled\n"
+  info "Toolchain-SDK already installed\n Installation cancelled\n"
 fi
 
 
