@@ -61,6 +61,14 @@ title() {
   tput sgr 0
 }
 
+info() {
+  tput setaf 5
+  echo ------------------------------------------
+  printf " $1"
+  echo ------------------------------------------
+  tput sgr 0
+}
+
 head() {
   tput setaf 6
   echo ------------------------------------------
@@ -150,8 +158,7 @@ if [ ! -d $SDKPATH ]; then
   cloneSDK && success
   installSDK && success
 else
-  echo "Toolchain-SDK already installed"
-  echo "Installation cancelled"
+  info "Toolchain-SDK already installed\nInstallation cancelled\n"
 fi
 
 
