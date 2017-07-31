@@ -96,6 +96,11 @@ linkPython(){
   sudo dpkg-reconfigure dash
 }
 
+linkQt5(){
+  title "Link QT5 default folder in x86_64"
+  sudo ln -s /usr/lib/x86_64-linux-gnu/qt5 /usr/lib/qt5
+}
+
 clonePoky(){
   title "Cloning poky repositories"
   $CLONE git@gitlab.com:bikeview/poky-morty.git  
@@ -154,11 +159,16 @@ if [ ! -d $RPIPATH ]; then
 else
   errorReport "rpi directory already exists"  
 fi
+
 if [ ! -d $SDKPATH ]; then
   cloneSDK && success
   installSDK && success
 else
   info "Toolchain-SDK already installed\n Installation cancelled\n"
+fi
+
+if uname -a|grep x86_64 > /dev/null 2>&1; then
+  linkQt5
 fi
 
 
