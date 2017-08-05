@@ -1,4 +1,4 @@
-#!/bin/sh -xx
+#!/bin/sh 
 
 #Script scope variables
 USAGE="$0 -d <mmcdevice> "
@@ -22,7 +22,7 @@ while getopts ":d:" OPT; do
 done
 
 #Check device argument
-if [ "$DEVICE" = "/dev/sda" ]; then
+if [ "$DEVICE" = "sda" ]; then
     echo "Choose a sdcard/usb device!"
     echo $USAGE
     exit 1
