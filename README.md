@@ -2,8 +2,6 @@
 
 dobatog@gmail.com 
 
-jenifer_blanco@hotmail.com
-
 
 ## Install 
 
